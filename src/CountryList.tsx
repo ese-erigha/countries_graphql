@@ -1,12 +1,13 @@
-/* eslint-disable no-console */
 import React from 'react';
-import { useRouteMatch, Link } from 'react-router-dom';
+import CountryCard from './CountryCard';
 
 const CountryList = (): JSX.Element => {
-  const { url } = useRouteMatch();
+  const arr: string[] = ['rendering','components','props-v-state'];
   return (
-    <>
-      <ul>
+    <div className="container m-t-40">
+      <div className="columns">
+        {arr.map((name)=> (<CountryCard name={name}/>))}
+          {/* <ul>
         <li>
           <Link to={`${url}/rendering`}>Rendering with React</Link>
         </li>
@@ -16,8 +17,9 @@ const CountryList = (): JSX.Element => {
         <li>
           <Link to={`${url}/props-v-state`}>Props v. State</Link>
         </li>
-      </ul>
-    </>
+      </ul> */}
+      </div>
+    </div>
   );
 };
 
