@@ -27,7 +27,6 @@
     "lint:eslint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "lint:eslint:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix",
     "prettify": "prettier --write **/*.{ts,tsx,js,jsx,json}",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'"
   },
   "husky": {

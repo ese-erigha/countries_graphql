@@ -2,51 +2,51 @@
 @import '../node_modules/spectre.css/dist/spectre-exp.min.css';
 @import '../node_modules/spectre.css/dist/spectre-icons.min.css';
 
-body{
+body {
   font-family: 'Nunito Sans';
 }
 
 $black: black;
 
-.p-l-80{
+.p-l-80 {
   padding-left: 80px;
 }
-.p-r-80{
+.p-r-80 {
   padding-right: 80px;
 }
-.p-t-20{
+.p-t-20 {
   padding-top: 20px;
 }
-.p-b-20{
+.p-b-20 {
   padding-bottom: 20px;
 }
-.black{
+.black {
   color: $black;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.m-t-70{
+.m-t-70 {
   margin-top: 70px;
 }
-.m-t-40{
+.m-t-40 {
   margin-top: 40px;
 }
-.m-b-1{
+.m-b-1 {
   margin-bottom: 4px;
 }
 
-.m-b-20{
+.m-b-20 {
   margin-bottom: 20px;
 }
 
-.gray-box-shadow{
+.gray-box-shadow {
   // box-shadow: 0px 0px 10px gray;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.fixed-navbar{
+.fixed-navbar {
   top: 0;
   left: 0;
   z-index: 9999;
