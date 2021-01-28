@@ -2,12 +2,14 @@ import React from 'react';
 import CountryCard from './CountryCard';
 
 const CountryList = (): JSX.Element => {
-  const arr: string[] = ['rendering','components','props-v-state'];
+  const arr: string[] = ['rendering', 'components', 'props-v-state'];
   return (
     <div className="container m-t-40">
       <div className="columns">
-        {arr.map((name)=> (<CountryCard name={name}/>))}
-          {/* <ul>
+        {arr.map((name, index) => (
+          <CountryCard key={`${name}`} name={name} />
+        ))}
+        {/* <ul>
         <li>
           <Link to={`${url}/rendering`}>Rendering with React</Link>
         </li>
