@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './components/Layout';
 
-const CountryList = lazy(() => import('./CountryList'));
+const Home = lazy(() => import('./Home'));
 const CountryDetail = lazy(() => import('./CountryDetail'));
 
 const App = (): JSX.Element => (
@@ -13,7 +13,7 @@ const App = (): JSX.Element => (
           <Route path="/" exact>
             <Redirect to="/countries" />
           </Route>
-          <Route path="/countries" exact component={CountryList} />
+          <Route path="/countries" exact component={Home} />
           <Route path="/countries/:id" component={CountryDetail} />
         </Switch>
       </Suspense>
