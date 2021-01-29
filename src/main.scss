@@ -2,20 +2,20 @@
 @import '../node_modules/spectre.css/dist/spectre-exp.min.css';
 @import '../node_modules/spectre.css/dist/spectre-icons.min.css';
 
-$body-color:  #3b4351;
+$body-color: #3b4351;
 $black: black;
 
-.font-20{
+.font-20 {
   font-size: 20px;
 }
 
-.font-weight-550{
+.font-weight-550 {
   font-weight: 550;
 }
 
 body {
   font-family: 'Nunito Sans';
-  color: $body-color
+  color: $body-color;
 }
 
 .p-l-80 {
@@ -36,7 +36,7 @@ body {
 .bold {
   font-weight: bold;
 }
-.w-250{
+.w-250 {
   width: 250px;
 }
 
@@ -60,7 +60,7 @@ body {
   margin-bottom: 30px;
 }
 
-.m-l-5{
+.m-l-5 {
   margin-left: 5px;
 }
 
@@ -79,18 +79,18 @@ body {
   line-height: 70px;
 }
 
-.disable-link{
+.disable-link {
   text-decoration: none;
   color: $body-color;
-  &:hover{
+  &:hover {
     text-decoration: none;
     color: $body-color;
   }
-  &:visited{
+  &:visited {
     text-decoration: none;
     color: $body-color;
   }
-  &:active{
+  &:active {
     text-decoration: none;
     color: $body-color;
   }
