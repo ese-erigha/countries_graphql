@@ -1,12 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/react-hooks';
 import './main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const client = new ApolloClient({
+  uri: 'https://countries-274616.ew.r.appspot.com/',
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
