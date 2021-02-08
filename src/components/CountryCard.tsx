@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import capitan from '../images/osx-el-capitan.jpg';
+import { Country } from '../types';
 
 type Props = {
-  name: string;
-};
+  region: string;
+} & Country;
 
 const CountryCard = (props: Props): JSX.Element => {
   const { url } = useRouteMatch();
@@ -13,22 +13,22 @@ const CountryCard = (props: Props): JSX.Element => {
       <Link className="disable-link" to={`${url}/{$props.name}`}>
         <div className="card gray-box-shadow m-w-300 m-b-30">
           <div className="card-image">
-            <img className="img-responsive" src={capitan} alt="OS X El Capitan" />
+            <img className="img-responsive" src={props.flag.svgFile} alt="OS X El Capitan" />
             <div className="card-header">
               <div className="card-title h5 bold">{props.name}</div>
             </div>
             <div className="card-body">
               <p className="m-b-1">
                 <span className="bold">Population: </span>
-                <span>81,770,900</span>
+                <span>{props.population}</span>
               </p>
               <p className="m-b-1">
                 <span className="bold">Region: </span>
-                <span>Europe</span>
+                <span>{props.region}</span>
               </p>
               <p className="m-b-1">
                 <span className="bold">Capital: </span>
-                <span>Berlin</span>
+                <span>{props.capital}</span>
               </p>
             </div>
           </div>

@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Layout from './components/Layout';
 import AppContextProvider from './AppContextProvider';
+import Layout from './components/Layout';
 
-const Home = lazy(() => import('./Home'));
-const CountryDetail = lazy(() => import('./CountryDetail'));
+const Home = lazy(() => import('./routes/Home'));
+const CountryDetail = lazy(() => import('./routes/CountryDetail'));
 
 const App = (): JSX.Element => (
-  <Layout>
-    <AppContextProvider>
+  <AppContextProvider>
+    <Layout>
       <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
@@ -20,8 +20,8 @@ const App = (): JSX.Element => (
           </Switch>
         </Suspense>
       </Router>
-    </AppContextProvider>
-  </Layout>
+    </Layout>
+  </AppContextProvider>
 );
 
 export default App;

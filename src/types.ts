@@ -19,9 +19,11 @@ export type Region = {
   name: string;
   subregions: Array<SubRegion>;
 };
+export type IRegions = {
+  Region: Region[];
+};
 
-export type GlobalState = {
-  loading: boolean;
-  regions: Array<Region>;
-  selectedRegion: string | null;
+export type State = {
+  regions: Region[];
+  selectedRegionId?: string;
 };

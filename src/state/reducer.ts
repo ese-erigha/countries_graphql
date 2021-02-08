@@ -1,22 +1,34 @@
-import { GlobalState } from '../types';
+import { State } from '../types';
 
-export type Action = {
-  type: string;
-  payload: Record<string, string>;
-};
+export enum ActionTypes {
+  SELECTED_REGION = 'SELECTED_REGION',
+}
 
-export const initialState: GlobalState = {
-  loading: true,
+interface BaseAction {
+  type: ActionTypes;
+}
+
+interface UpdateRegionAction extends BaseAction {
+  payload: Pick<State, 'selectedRegionId' | 'regions'>;
+}
+export type Action = UpdateRegionAction;
+
+export const initialState: State = {
   regions: [],
-  selectedRegion: null,
 };
 
-export const reducer = (state: GlobalState, action: Action) => {
+export const initState = (state: State) => state;
+
+export const reducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'HELLO':
-      return { ...state, loading: true };
+    case 'SELECTED_REGION':
+      return {
+        ...state,
+        selectedRegionId: action.payload.selectedRegionId,
+        regions: action.payload.regions,
+      };
 
     default:
-      return { ...state, loading: false };
+      return { ...state };
   }
 };

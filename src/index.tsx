@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
@@ -8,7 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
-  uri: 'https://countries-274616.ew.r.appspot.com/',
+  uri: process.env.REACT_APP_GRAPHQL_URI,
   cache: new InMemoryCache(),
 });
 
