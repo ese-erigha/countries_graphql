@@ -1,4 +1,4 @@
-import { Country, Region, SubRegion } from '../types';
+import { Country, SubRegion } from '../types';
 
 export const mapSubRegionToArrayOfCountry = (subRegions: SubRegion[]) => {
   const countries: Country[] = [];

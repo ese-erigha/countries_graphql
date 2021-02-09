@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
 import { useLazyQuery } from '@apollo/react-hooks';
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { GET_REGIONS_QUERY } from '../api';
