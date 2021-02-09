@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { mapSubRegionToArrayOfCountry } from '../helpers/transform';
-import { Region } from '../types';
+import { AppContext } from '../state/context';
 import CountryCard from './CountryCard';
 
-type Props = {
-  selectedRegion: Region;
-};
+const CountryList = (): JSX.Element => {
+  const { state } = useContext(AppContext);
+  const { loading, selectedRegion } = state;
 
-const CountryList = (props: Props): JSX.Element => {
-  const { selectedRegion } = props;
-  const countryList = mapSubRegionToArrayOfCountry(selectedRegion.subregions);
+  const countryList = selectedRegion ? mapSubRegionToArrayOfCountry(selectedRegion.subregions) : [];
   return (
     <>
-      <div className="container">
-        <div className="columns">
-          {countryList.map((country) => (
-            <CountryCard key={`${country.name}`} region={selectedRegion.name} {...country} />
-          ))}
+      {!loading && selectedRegion && (
+        <div className="container">
+          <div className="columns">
+            {countryList.map((country) => (
+              <CountryCard key={`${country.name}`} region={selectedRegion.name} {...country} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

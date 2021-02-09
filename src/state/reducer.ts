@@ -1,31 +1,33 @@
 import { State } from '../types';
 
 export enum ActionTypes {
-  SELECTED_REGION = 'SELECTED_REGION',
+  FETCHED_REGION = 'FETCHED_REGION',
 }
 
 interface BaseAction {
   type: ActionTypes;
 }
 
-interface UpdateRegionAction extends BaseAction {
-  payload: Pick<State, 'selectedRegionId' | 'regions'>;
+interface FetchedRegionAction extends BaseAction {
+  payload: Pick<State, 'selectedRegion' | 'regions'>;
 }
-export type Action = UpdateRegionAction;
+export type Action = FetchedRegionAction;
 
 export const initialState: State = {
   regions: [],
+  loading: true,
 };
 
 export const initState = (state: State) => state;
 
 export const reducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'SELECTED_REGION':
+    case 'FETCHED_REGION':
       return {
         ...state,
-        selectedRegionId: action.payload.selectedRegionId,
+        selectedRegion: action.payload.selectedRegion,
         regions: action.payload.regions,
+        loading: false,
       };
 
     default:

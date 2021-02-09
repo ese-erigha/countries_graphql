@@ -24,6 +24,7 @@ export type IRegions = {
 };
 
 export type State = {
+  loading: boolean;
   regions: Region[];
-  selectedRegionId?: string;
+  selectedRegion?: Region;
 };
