@@ -18,3 +18,17 @@ export const GET_REGIONS_QUERY = gql`
     }
   }
 `;
+
+export const SEARCH_COUNTRIES_QUERY = gql`
+  query SearchCountry($name: String) {
+    Country(name: $name, orderBy: [name_asc]) {
+      _id
+      name
+      population
+      capital
+      flag {
+        svgFile
+      }
+    }
+  }
+`;

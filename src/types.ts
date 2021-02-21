@@ -23,8 +23,13 @@ export type IRegions = {
   Region: Region[];
 };
 
+export type ICountries = {
+  Country: Country[];
+};
+
 export type State = {
   loading: boolean;
   regions: Region[];
   selectedRegion?: Region;
+  countryList: Country[];
 };
